@@ -1,26 +1,23 @@
 {% set name = "more-itertools" %}
-{% set version = "6.0.0" %}
-{% set compress_type = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "590044e3942351a1bdb1de960b739ff4ce277960f2425ad4509446dbace8d9d1" %}
+{% set version = "7.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: c3e4748ba1aad8dba30a4886b0b1a2004f9a863837b8654e7059eebf727afa5a
 
 build:
   number: 0
   skip: True  # [py2k]
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
     - python
-    - setuptools
+    - pip
 
   run:
     - python
