@@ -17,7 +17,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python
     - wheel
     - setuptools
   run:
@@ -30,6 +30,7 @@ test:
     - pip check
   requires:
     - pip
+    - python <3.10
 
 about:
   home: https://github.com/more-itertools/more-itertools
