@@ -30,7 +30,6 @@ test:
     - python -m unittest discover --buffer -s=tests
   requires:
     - pip
-    - python
   source_files:
     - tests
 
