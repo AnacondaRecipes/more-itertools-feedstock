@@ -1,5 +1,5 @@
 {% set name = "more-itertools" %}
-{% set version = "11.0.1" %}
+{% set version = "11.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: fefaf25b7ab08f0b45fa9f1892cae93b9fc0089ef034d39213bce15f1cc9e199
+  sha256: 392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804
 
 build:
   number: 0
