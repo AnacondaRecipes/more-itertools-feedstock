@@ -1,5 +1,5 @@
 {% set name = "more-itertools" %}
-{% set version = "11.1.0" %}
+{% set version = "11.2.1" %}
 
 package:
   name: {{ name }}
@@ -7,16 +7,16 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d
+  sha256: cbf08fd0af284dc69718b9b76a8e6203df624d70209ea511e4219d350c856f63
 
 build:
   number: 0
-  skip: true  # [py<310]
+  skip: true  # [py<311]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
-    - flit-core >=3.12,<4
+    - flit-core >=4,<5
     - pip
     - python
   run:
